@@ -1,0 +1,111 @@
+<!doctype html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>侧边栏下拉</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		html,body{
+			height: 100%;
+		}
+		.wrap{
+			height: 100%
+			width:260px;
+			background-color: #363a45;
+			text-align: center;
+			color: #fff;
+		}
+		.head{
+
+		}
+		.nav{
+			width: 250px;
+			margin: 
+		}
+		.nav-list h2{
+			position: relative;
+			padding:15px 0;
+			background-color:#3889d4;
+			text-align: center;
+			color: #fff;
+			font-size: 15px;
+		}
+		.nac-list i{
+			position: relative;
+			right: 10;
+			top: 0;
+			border:10px solid transparent; 
+			border-left-color: #fff; 
+		}
+		.hide{
+			overflow: hidden;
+			height: 0;
+
+		}
+		.high h5{
+			padding: 10px 0;
+			background-color: #282c3a;
+			border-bottom: 1px solid #42495d;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="head">国内各地景点</div>
+		<dir class="nav">
+			<ul>
+				<li class="nav-list">
+					<h2>北京景点</h2>
+					<li></li>
+					<div class="hide">
+						<h5>故宫</h5>
+						<h5>十三陵</h5>
+						<h5>天坛公园</h5>
+						<h5>雍和宫</h5>
+					</div>			
+				</li>	
+				<li class="nav-list">
+					<h2>上海景点</h2>
+					<li></li>
+					<div class="hide">
+						<h5>故宫</h5>
+						<h5>十三陵</h5>
+						<h5>天坛公园</h5>
+						<h5>雍和宫</h5>
+					</div>			
+				</li>	
+			</ul>
+		</dir>
+	</div>
+
+	<script>//script 写js代码的地方
+	//js 弱类型 脚本 基于原型
+	//int 
+	/* 
+		1.先隐藏整个hide层的高度
+		2.点击显示真的hide层的高度
+			在js中如何实现获取元素 -> document.querySelector()
+			实现一个点击事件
+			在js中设置cSS代码
+			
+	*/
+		var aList = document.querySelectorAll('.nav-list h2');
+		var aHide = document.querySelectorAll('.hide');
+		for (var i = 0; i < 2; i++) {
+			aList[i].index = i;//自定义属性保存下标
+			aList[i].onclick = function() {
+				console.log(this)
+				console.log('我吴彦祖点击了鼠标',this.index);
+
+				aHide[this.index].style.height = '251px';
+			}
+		}
+	</script>
+</body>
+</html>
